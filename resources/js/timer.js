@@ -5,6 +5,14 @@ while (number >= 1) {
 }
 console.log("Blast off!");
 alert("Checking alert function");
-var user = prompt("What is your name?")
-confirm("Want to go " + user + "?");
-console.log(user)
+
+
+var gotName = false;
+while(gotName == false) {
+  var username = prompt("What is your name?");
+  if( confirm("Are you sure your name is " + username + "?")) {
+    alert("Hey there " + username + "!");
+    gotName = true
+  }
+}
+console.log(username)
