@@ -16,3 +16,14 @@ while(gotName == false) {
   }
 }
 console.log(username)
+
+function getName (list) {
+  var count = 0;
+  for (var i = 0; i < list.length; i++) {
+    if (typeof(list[i] == "string")) {
+      count++;
+      console.log(i + "is a string at index " + list[i]);
+    }
+  }
+  return count
+};
