@@ -40,4 +40,13 @@ function assignTorpedo(name, passengerArray) {
 }
 
 // This will return function at first instance of true
-
+function makeTorpedoAssigner(passengerArray) {
+      return function(name){
+        for (var i = 0; i < passengerArray; i++) {
+          if (passengerArray[i] == name) {
+            alert("Ahoy, " + name + "!\n" +
+                  "Man your post at Torpedo #" + (i + 1) + "!");
+          }
+        }
+      };
+}
