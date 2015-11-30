@@ -197,8 +197,27 @@ var relieveDuty = function (vehicle, day){
 
 relieveDuty(vehicle3, "Friday");
 
+// We’ve got our list of spearguns, but the problem is that the ranger-devs need to know what heft property each speargun has in order to know which one is right for their individual aiming styles.
+
+// Modify the log message in your listGuns function so that it follows the format below. You’ll need to use bracket notation strategically to access the heft property for the current speargun in guns.
 
 
+var rockSpearguns = {
+  Sharpshooter: {barbs: 2, weight: 10, heft: "overhand"},
+  Pokepistol: {barbs: 4, weight: 8, heft: "shoulder"},
+  Javelinjet: {barbs: 4, weight: 12, heft: "waist"},
+  Firefork: {barbs: 6, weight: 8, heft: "overhand"},
+  "The Impaler": {barbs: 1, weight: 30, heft: "chest"}
+};
+
+function listGuns(guns) {
+  for (var speargun in guns) {
+    // modify the log message here
+    console.log("Behold! " + speargun + ", with " + guns[speargun].heft + "!");
+  }
+}
+
+listGuns(rockSpearguns);
 
 
 
