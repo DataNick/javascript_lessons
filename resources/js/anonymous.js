@@ -50,3 +50,91 @@ function makeTorpedoAssigner(passengerArray) {
         }
       };
 }
+
+function multiplier(factor) {
+  return function(number) {
+    return number * factor;
+  };
+}
+
+var times5 = multiplier(5);
+times5(4) => 20
+
+var bookArray = ["The Great Gatsby", "The Sea Wolf", "Where the Wild Things Are"];
+var myBox = {
+  height: 6,
+  width: 5,
+  length: 4,
+  volume: 460,
+  destination1: "Orlando",
+  destination2: "Florida",
+  "# of stops": 2,
+  "# of Books": 0
+};
+
+for (var i = 1; i < myBox["# of stops"]; i++) {
+  console.log(myBox["destination" + i]);
+}
+
+function addBook(box, name, writer){
+  box["# of Books"]++;
+  box["book" + box["# of Books"]] = {title: name, author: writer};
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
