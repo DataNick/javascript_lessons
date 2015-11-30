@@ -127,6 +127,43 @@ oldAlert() // 5
 The three functions have shared access to the same closure — the local variables of setupSomeGlobals() when the three functions were defined.
 Note that in the above example, if you call setupSomeGlobals() again, then a new closure (stack-frame!) is created.
 
+// We need to assign each of the ranger-devs to a super-blinding light bulb based on their station number. So we’re building a function that creates an alert message for the ranger-devs
+
+
+var superBlinders = [ ["Firestorm", 4000], ["Solar Death Ray", 6000], ["Supernova", 12000] ];
+
+var lighthouseRock = {
+  gateClosed: true,
+  weaponBulbs: superBlinders,
+  capacity: 30,
+  secretPassageTo: "Underwater Outpost",
+  numRangers: 3,
+  ranger1: {name: "Nick Walsh", skillz: "magnification burn", station: 2},
+  ranger2: {name: "Drew Barontini", skillz: "uppercut launch", station: 3},
+  ranger3: {name: "Christine Wong", skillz: "bomb defusing", station: 1}
+};
+
+function dontPanic(location) {
+  var list = "Avast, me hearties!\n" +
+             "There be Pirates nearby! Stations!\n";
+
+  // loop through the rangers and append to list
+  for (var i = 1; i <= location.numRangers; i++) {
+      list += location["ranger" + i].name + ", man the " + location.weaponBulbs[location["ranger" + i].station-1][0] + "!\n";
+
+  }
+
+  alert(list);
+}
+
+dontPanic(lighthouseRock);
+
+
+
+// Vehicle objects now contain objects that represent ranger-devs. We want to keep track of which ranger-devs are assigned to patrol duty on specific vehicles. The vehicle3 object is provided in the challenge editor as an example.
+
+We need to get the offDuty rangers out of the vehicle while holding on to their objects for further use, as well as renumbering the rangers who should remain onDuty in the vehicle
+
 var vehicle3 = {
   type: "Submarine", capacity: 8, storedAt: "Underwater Outpost",
   ranger1: {name: "Gregg Pollack", skillz: "Lasering", dayOff: "Friday"},
