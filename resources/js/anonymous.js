@@ -220,7 +220,47 @@ function listGuns(guns) {
 listGuns(rockSpearguns);
 
 
+// Exploring closures again
 
+function buildList(list) {
+    var result = [];
+    for (var i = 0; i < list.length; i++) {
+        var item = 'item' + i;
+        result.push( function() {alert(item + ' ' + list[i])} );
+    }
+    return result;
+}
+
+function testList() {
+    var fnlist = buildList([1,2,3]);
+    // Using j only to help prevent confusion -- could use i.
+    for (var j = 0; j < fnlist.length; j++) {
+        fnlist[j]();
+    }
+}
+
+// Note that when you run the example, "item2 undefined" is alerted three times! This is because just like previous examples, there is only one closure for the local variables for buildList. When the anonymous functions are called on the line fnlist[j](); they all use the same single closure, and they use the current value for i and item within that one closure (where i has a value of 3 because the loop had completed, and item has a value of 'item2'). Note we are indexing from 0 hence item has a value of item2. And the i++ will increment i to the value 3.
+
+// var item = 'item' + i may be passing the value by Reference
+// it will run the loop and return value for item but also advance i++ to 3
+
+
+function buildList(list) {
+    var result = [];
+    for (var i = 0; i < list.length; i++) {
+        var item = 'item' + i;
+        result.push( function() {alert(item + ' ' + list[i])} );
+    }
+    return result;
+}
+
+function testList() {
+    var fnlist = buildList([1,2,3]);
+    // Using j only to help prevent confusion -- could use i.
+    for (var j = 0; j < fnlist.length; j++) {
+        fnlist[j]();
+    }
+}
 
 
 
