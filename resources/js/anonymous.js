@@ -264,7 +264,25 @@ function testList() {
 
 
 
+// Creating new objects from existing objects
+var car = {
+  make: "Tesla",
+  model: "Model S"
+}
 
+var superCar = Object.create(car);
+
+// Creating a new property across all objects
+Object.prototype.createCount = function (count){
+  var result = [];
+  var count = count;
+  function (num){
+    count++;
+    var number = count + num;
+    result.push(number);
+    return result;
+  }
+};
 
 
 
