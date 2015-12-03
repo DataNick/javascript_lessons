@@ -284,6 +284,10 @@ Object.prototype.createCount = function (count){
   }
 };
 
+// If parameter passed by reference to a function changes in that function then value will change inside calling function as well
+// passing in an object to a function, it is passed in by reference. Any property of that object is accessible within function
+// Passing in a primitive type variable (1, boolean, string), the value is passed in by value. Any changes to that variable while in the function are completely separate from anything that happens outside of the function.
+
 
 
 
